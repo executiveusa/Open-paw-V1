@@ -1,0 +1,43 @@
+version: "3.9"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    ports:
+      - "3001:3001"
+    volumes:
+      - openpaw-data:/app/data
+    environment:
+      API_HOST: "0.0.0.0"
+      API_PORT: "3001"
+      DATABASE_URL: "sqlite:/app/data/openpaw.db"
+      CORS_ORIGINS: "http://localhost:5173,http://localhost:4321"
+      RUST_LOG: "open_paw_api=info,tower_http=info"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3001/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  openpaw-data:
+    driver: local
+
+# Optional: uncomment for future PostgreSQL support
+# postgres:
+#   image: postgres:16-alpine
+#   environment:
+#     POSTGRES_DB: openpaw
+#     POSTGRES_USER: openpaw
+#     POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+#   volumes:
+#     - postgres-data:/var/lib/postgresql/data
+#   ports:
+#     - "5432:5432"
+#
+# volumes:
+#   postgres-data:

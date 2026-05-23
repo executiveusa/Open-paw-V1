@@ -1,0 +1,52 @@
+# Rust
+/target
+**/*.rs.bk
+Cargo.lock
+
+# Node / pnpm
+node_modules
+.pnpm-store
+.turbo
+
+# Build outputs
+dist
+build
+.astro
+.vite
+out
+coverage
+
+# Environment
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/settings.json
+.idea
+*.swp
+*.swo
+
+# SQLite databases (dev data, never commit)
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# Media uploads (dev)
+uploads/
+
+# Test artifacts
+playwright-report/
+test-results/

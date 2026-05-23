@@ -1,0 +1,12 @@
+[package]
+name = "open-paw-auth"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+serde = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+thiserror = { workspace = true }
+open-paw-core = { path = "../core" }
