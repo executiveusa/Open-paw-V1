@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Funding Radar — Open Paw Grant Finder for Animal Welfare" description="Find, track, and apply for grants with the Open Paw Funding Radar. Built for animal rescues, shelters, and welfare nonprofits.">
+  <section class="pt-20 pb-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 dark:bg-brand-950/40 border border-brand-200 dark:border-brand-800 text-brand-700 dark:text-brand-400 text-xs font-medium mb-6">First-class feature</div>
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">Funding Radar</h1>
+      <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+        Find grants without losing the plot. Track funders, deadlines, and applications in one organized workspace — with AI-assisted drafting and human-required approval.
+      </p>
+    </div>
+  </section>
+  <section class="py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">The grant workflow</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+        {[
+          { step: '1', title: 'Build your org profile', desc: 'Species served, geography, programs, tax status, and mission.' },
+          { step: '2', title: 'Match opportunities', desc: 'Funding Radar surfaces relevant grants from its database.' },
+          { step: '3', title: 'Check eligibility', desc: 'Review requirements against your profile before drafting.' },
+          { step: '4', title: 'Draft and submit', desc: 'AI drafts narrative. Human reviews and approves before submission.' },
+        ].map(item => (
+          <div class="p-5 rounded-2xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
+            <div class="w-7 h-7 rounded-full bg-brand-100 dark:bg-brand-900 text-brand-700 dark:text-brand-400 text-xs font-bold flex items-center justify-center mb-4">{item.step}</div>
+            <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-2">{item.title}</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+      <div class="bg-amber-50 dark:bg-amber-950/20 border border-amber-100 dark:border-amber-900 rounded-2xl p-6">
+        <h3 class="text-sm font-semibold text-amber-900 dark:text-amber-300 mb-2">Important guardrails</h3>
+        <p class="text-sm text-amber-800 dark:text-amber-400 leading-relaxed">
+          Funding Radar never auto-submits applications, fabricates statistics, invents partnerships, or modifies financial numbers. All AI outputs are clearly marked as drafts and require human review.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

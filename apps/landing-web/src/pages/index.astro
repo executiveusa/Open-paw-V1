@@ -1,0 +1,373 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Open Paw — Free Animal Welfare Software for Rescues and Shelters">
+  <!-- HERO -->
+  <section class="pt-20 pb-24 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-paw-50 dark:bg-paw-950/40 border border-paw-200 dark:border-paw-800 text-paw-700 dark:text-paw-400 text-sm font-medium mb-8">
+        <span class="w-2 h-2 rounded-full bg-paw-500 animate-pulse" aria-hidden="true"></span>
+        Open-source &amp; Free Forever
+      </div>
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 dark:text-white leading-tight mb-6">
+        Animal welfare software<br class="hidden sm:block" />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-paw-600 to-brand-600">built for the work.</span>
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed mb-10">
+        Track animals, coordinate foster care, find funding, and publish adoptable pets — with your data staying local. Free, open-source, and built for real rescue teams.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/download"
+          class="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-semibold text-base hover:bg-gray-700 dark:hover:bg-gray-100 transition-colors shadow-lg"
+        >
+          Download Free
+          <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+          </svg>
+        </a>
+        <a
+          href="https://github.com/executiveusa/Open-paw-V1"
+          class="inline-flex items-center justify-center px-8 py-4 rounded-xl border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 font-semibold text-base hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
+        >
+          <svg class="mr-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          View GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF BAR -->
+  <section class="py-8 border-y border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <dl class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        {[
+          { label: 'Local-first', icon: '💾', desc: 'Your data stays on your machine' },
+          { label: 'Open-source', icon: '🔓', desc: 'Auditable and forkable forever' },
+          { label: 'Grant-ready', icon: '📋', desc: 'Built-in Funding Radar module' },
+          { label: 'One-click install', icon: '⚡', desc: 'No server setup required' },
+        ].map(item => (
+          <div class="flex flex-col items-center gap-1">
+            <span class="text-2xl" aria-hidden="true">{item.icon}</span>
+            <dt class="font-semibold text-gray-900 dark:text-white text-sm">{item.label}</dt>
+            <dd class="text-xs text-gray-500 dark:text-gray-400">{item.desc}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- WHAT IT DOES -->
+  <section class="py-24 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          Everything your team needs in one place
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          From intake to adoption, from lost pets to grant applications — Open Paw handles the operational work so your team can focus on the animals.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          {
+            icon: '🐾',
+            title: 'Animal Records',
+            desc: 'Complete intake records, status pipeline from intake to adoption, microchip IDs, photos, and private notes.',
+          },
+          {
+            icon: '🏠',
+            title: 'Foster & Adoption Workflow',
+            desc: 'Track foster placements, adoption applications, and volunteer tasks in one clear board.',
+          },
+          {
+            icon: '💉',
+            title: 'Veterinary-Lite Records',
+            desc: 'Vaccinations, medications, procedures, weight history, and restricted medical notes — all role-controlled.',
+          },
+          {
+            icon: '🔍',
+            title: 'Lost & Found',
+            desc: 'Public report intake, description matching, internal review workflow, and reunification tracking.',
+          },
+          {
+            icon: '💰',
+            title: 'Funding Radar',
+            desc: 'Funder database, grant calendar, eligibility checker, and AI-assisted narrative drafts with human approval.',
+          },
+          {
+            icon: '📢',
+            title: 'Public Adoption Pages',
+            desc: 'Publish polished adoption profiles with approved fields only. Private notes never leak to the public.',
+          },
+        ].map(feature => (
+          <div class="p-6 rounded-2xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 hover:shadow-md transition-shadow">
+            <div class="text-3xl mb-4" aria-hidden="true">{feature.icon}</div>
+            <h3 class="text-base font-semibold text-gray-900 dark:text-white mb-2">{feature.title}</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{feature.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT HELPS -->
+  <section class="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          Built for the people doing the work
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          Whether you're a solo rescuer, a mid-size shelter, or a fiscal sponsor supporting multiple programs, Open Paw scales with your organization.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {[
+          { title: 'Animal Rescues', desc: 'From one-person operations to multi-state networks', icon: '🐕' },
+          { title: 'Shelters', desc: 'Municipal and private shelter management', icon: '🏢' },
+          { title: 'Foster Networks', desc: 'Coordinate fosters, track placements, manage tasks', icon: '🏠' },
+          { title: 'Vet Welfare Clinics', desc: 'Medical records, spay/neuter tracking, continuity of care', icon: '⚕️' },
+          { title: 'Spay/Neuter Programs', desc: 'Intake, procedure tracking, and follow-up workflows', icon: '🩺' },
+          { title: 'Fiscal Sponsors', desc: 'Multi-tenant support for sponsored animal welfare programs', icon: '📊' },
+        ].map(org => (
+          <div class="p-5 rounded-2xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
+            <div class="text-2xl mb-3" aria-hidden="true">{org.icon}</div>
+            <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-1">{org.title}</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400">{org.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FUNDING RADAR -->
+  <section class="py-24 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 dark:bg-brand-950/40 border border-brand-200 dark:border-brand-800 text-brand-700 dark:text-brand-400 text-xs font-medium mb-6">
+            First-class feature
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+            Funding Radar
+          </h2>
+          <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+            Animal welfare organizations leave money on the table because grant research is slow and disorganized. Funding Radar keeps your funder database, deadlines, and applications in one place — with AI-assisted drafting that requires human review before anything is submitted.
+          </p>
+          <ul class="space-y-3">
+            {[
+              'Funder database with focus areas and contact info',
+              'Grant calendar with deadline alerts',
+              'Eligibility checklist against your org profile',
+              'AI narrative draft — reviewed before submission',
+              'Budget builder and impact report generator',
+              'Application workspace and status tracking',
+            ].map(item => (
+              <li class="flex items-start gap-3 text-sm text-gray-700 dark:text-gray-300">
+                <svg class="w-4 h-4 text-paw-500 mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a
+            href="/funding-radar"
+            class="mt-8 inline-flex items-center text-sm font-medium text-brand-600 dark:text-brand-400 hover:underline"
+          >
+            Learn more about Funding Radar →
+          </a>
+        </div>
+        <div class="bg-gradient-to-br from-brand-50 to-paw-50 dark:from-brand-950/30 dark:to-paw-950/30 rounded-3xl p-8 border border-brand-100 dark:border-brand-900">
+          <div class="space-y-4">
+            <div class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Grant Pipeline</div>
+            {[
+              { name: 'Petco Love Lost Grant', amount: '$25,000', status: 'Identified', color: 'bg-yellow-100 dark:bg-yellow-950 text-yellow-700 dark:text-yellow-400' },
+              { name: 'ASPCA Saving Lives Grant', amount: '$50,000', status: 'Drafting', color: 'bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-400' },
+              { name: 'PetSmart Charities', amount: '$15,000', status: 'Submitted', color: 'bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-400' },
+              { name: 'Local Foundation Grant', amount: '$5,000', status: 'Awarded', color: 'bg-green-100 dark:bg-green-950 text-green-700 dark:text-green-400' },
+            ].map(grant => (
+              <div class="flex items-center justify-between p-3 rounded-xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
+                <div>
+                  <div class="text-sm font-medium text-gray-900 dark:text-white">{grant.name}</div>
+                  <div class="text-xs text-gray-500 dark:text-gray-400">Up to {grant.amount}</div>
+                </div>
+                <span class={`text-xs font-medium px-2 py-1 rounded-full ${grant.color}`}>{grant.status}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVACY / DATA -->
+  <section class="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="order-2 lg:order-1 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {[
+            { icon: '🔒', title: 'Local SQLite', desc: 'Your database lives on your machine. No cloud required.' },
+            { icon: '🔑', title: 'Role-based access', desc: 'Volunteers, vets, admins — each sees only what they need.' },
+            { icon: '📋', title: 'Full audit log', desc: 'Every write is logged. Know who changed what and when.' },
+            { icon: '🚫', title: 'No diagnosis AI', desc: 'Medical diagnoses are never automated. Humans stay in control.' },
+          ].map(item => (
+            <div class="p-5 rounded-2xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
+              <div class="text-2xl mb-3" aria-hidden="true">{item.icon}</div>
+              <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-1">{item.title}</h3>
+              <p class="text-xs text-gray-500 dark:text-gray-400">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+        <div class="order-1 lg:order-2">
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+            Your data, your rules.
+          </h2>
+          <p class="text-lg text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+            Open Paw is local-first by default. Your animal records, medical notes, and donor information are stored on your machine — not sold to a cloud provider, not accessible without your permission.
+          </p>
+          <p class="text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+            Cloud sync is optional. Self-hosted deployment is supported. The source code is open and auditable. You are never locked in.
+          </p>
+          <a href="/security" class="mt-8 inline-flex items-center text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors hover:underline">
+            Read our security model →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPLOY OPTIONS -->
+  <section class="py-24 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        Run it your way
+      </h2>
+      <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-16">
+        Desktop app, shelter office server, or self-hosted cloud — Open Paw fits how your organization works.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          {
+            icon: '💻',
+            title: 'Desktop App',
+            desc: 'One-click install on Mac, Windows, or Linux. Local encrypted database. Works offline.',
+            badge: 'Coming Soon',
+          },
+          {
+            icon: '🖥️',
+            title: 'Local Network',
+            desc: 'Run on a shelter office server. Multiple staff access from their desktops without internet.',
+            badge: 'V1',
+          },
+          {
+            icon: '☁️',
+            title: 'Self-hosted Cloud',
+            desc: 'Docker Compose deployment with PostgreSQL and object storage for multi-location teams.',
+            badge: 'Roadmap',
+          },
+        ].map(mode => (
+          <div class="p-8 rounded-2xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900">
+            <div class="text-4xl mb-4" aria-hidden="true">{mode.icon}</div>
+            <div class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 inline-block mb-4">{mode.badge}</div>
+            <h3 class="text-base font-semibold text-gray-900 dark:text-white mb-2">{mode.title}</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{mode.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG PREVIEW -->
+  <section class="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-end justify-between mb-12">
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">Open Paw Field Notes</h2>
+          <p class="text-gray-600 dark:text-gray-400">Practical guides for animal welfare teams.</p>
+        </div>
+        <a href="/blog" class="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+          All posts →
+        </a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          {
+            slug: 'why-animal-welfare-software-should-be-local-first',
+            title: 'Why Animal Welfare Software Should Be Local-First',
+            category: 'Technology',
+            date: 'Jan 15, 2024',
+          },
+          {
+            slug: 'funding-radar-finding-grants-without-losing-the-plot',
+            title: 'Funding Radar: Finding Grants Without Losing the Plot',
+            category: 'Funding',
+            date: 'Jan 22, 2024',
+          },
+          {
+            slug: 'track-foster-capacity-without-spreadsheet-explosion',
+            title: 'Track Foster Capacity Without a Spreadsheet Explosion',
+            category: 'Operations',
+            date: 'Jan 29, 2024',
+          },
+        ].map(post => (
+          <a href={`/blog/${post.slug}`} class="group block p-6 rounded-2xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 hover:shadow-md transition-all">
+            <div class="text-xs font-medium text-brand-600 dark:text-brand-400 mb-3">{post.category}</div>
+            <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors leading-snug">
+              {post.title}
+            </h3>
+            <time class="text-xs text-gray-400 dark:text-gray-500">{post.date}</time>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- DEV CTA -->
+  <section class="py-24 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        Help us build it
+      </h2>
+      <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-10">
+        Open Paw is built by volunteers who care about animal welfare. If you write Rust, TypeScript, or just have strong opinions about animal welfare workflows — we want to hear from you.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="https://github.com/executiveusa/Open-paw-V1"
+          class="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-semibold text-base hover:bg-gray-700 dark:hover:bg-gray-100 transition-colors"
+        >
+          View on GitHub
+        </a>
+        <a
+          href="https://github.com/executiveusa/Open-paw-V1/issues"
+          class="inline-flex items-center justify-center px-8 py-4 rounded-xl border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 font-semibold text-base hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
+        >
+          Good First Issues
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-24 px-4 sm:px-6 lg:px-8 bg-gray-900 dark:bg-gray-950">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+        Ready to get started?
+      </h2>
+      <p class="text-lg text-gray-400 max-w-xl mx-auto mb-10">
+        Download Open Paw for free. No account required. Your data stays yours.
+      </p>
+      <a
+        href="/download"
+        class="inline-flex items-center justify-center px-10 py-4 rounded-xl bg-white text-gray-900 font-semibold text-base hover:bg-gray-100 transition-colors shadow-lg"
+      >
+        Download Open Paw — Free
+      </a>
+    </div>
+  </section>
+</BaseLayout>

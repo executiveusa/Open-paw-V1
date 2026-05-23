@@ -1,0 +1,50 @@
+---
+title: "Open Source for Shelters: What Data Portability Actually Means"
+description: '"Data portability" is a phrase software vendors use. Here''s what it actually means for your animal welfare organization.'
+date: 2024-02-26
+category: Technology
+---
+
+When software companies pitch their products to nonprofits, they often mention "data portability" as a feature. In practice, this means different things to different vendors — and the gap between what's promised and what's delivered matters.
+
+## What "data portability" usually means in practice
+
+When a proprietary shelter management system says you can "export your data," they typically mean:
+
+- You can download a CSV file of your animal records
+- The CSV has their field names, not standard names
+- Photos are not included, or included in a proprietary format
+- Relationship data (which animal belongs to which foster, which grant belongs to which funder) is flattened or lost
+- You can technically take the data, but reimporting it into another system requires significant work
+
+This is better than nothing, but it's not portability in any meaningful sense.
+
+## What real data portability means
+
+Real data portability means:
+
+**You can take your data and use it.** Not just export a file, but actually work with it in another tool, import it into a new system, or query it directly.
+
+**The format is readable.** SQL, CSV with clear headers, or JSON with documented schema — formats that don't require their software to interpret.
+
+**Relationships are preserved.** Animal-to-medical-record, animal-to-foster-placement, grant-to-application — the connections between records are maintained.
+
+**You don't need permission.** You can export at any time, without contacting support, without a fee.
+
+## How open source changes this
+
+With open source software, data portability is structural, not a feature.
+
+The schema is public. Anyone can read the migration files, understand the table structure, and write a query to extract exactly what they need. There's no proprietary format to decode.
+
+The database is yours. With local-first software like Open Paw, your SQLite database lives on your machine. Open it with any SQLite browser. Query it with any SQL tool. Back it up by copying a file.
+
+There's no vendor holding your data. You can stop using the software without losing access to your records.
+
+## The practical implication
+
+For small animal welfare organizations, this matters most during transitions. When a software vendor shuts down. When prices become unaffordable. When a better tool becomes available.
+
+Organizations with portable data can move. Organizations without it are stuck.
+
+Open Paw is designed so that your data is always yours, in a format you can actually use.

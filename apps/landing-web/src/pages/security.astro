@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Security — Open Paw" description="Open Paw security model: local-first data, role-based access control, audit logging, and responsible disclosure.">
+  <section class="pt-20 pb-24 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Security</h1>
+      <p class="text-lg text-gray-600 dark:text-gray-400 mb-12">Open Paw is designed to protect sensitive animal welfare data.</p>
+      <div class="space-y-8">
+        {[
+          { title: 'Local-first data', body: 'By default, your data lives on your machine in a SQLite database. No cloud account is required. Cloud sync is opt-in and transparent.' },
+          { title: 'Role-based access control', body: 'Every action is gated by role. Volunteers cannot read restricted medical records. Public intake forms cannot trigger privileged actions. Vets, admins, and coordinators see only what their role allows.' },
+          { title: 'Audit logging', body: 'All sensitive writes produce an immutable audit event. You can always answer: who changed this record, and when.' },
+          { title: 'No automatic medical diagnosis', body: 'Medical diagnosis is never automated. AI can format and summarize notes but cannot write to medical records without a policy-approved human in the loop.' },
+          { title: 'No secrets in source', body: 'API keys, passwords, and tokens are never committed to the repository. The .env.example file documents required variables.' },
+          { title: 'Responsible disclosure', body: 'Found a vulnerability? Email security@openpaw.org or open a private GitHub Security Advisory. We will respond within 72 hours.' },
+        ].map(item => (
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
+            <h2 class="text-base font-semibold text-gray-900 dark:text-white mb-2">{item.title}</h2>
+            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
