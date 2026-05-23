@@ -47,7 +47,7 @@ tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
 
 # OpenAPI
 utoipa = { version = "5", features = ["axum_extras", "chrono", "uuid"] }
-utoipa-swagger-ui = { version = "8", features = ["axum"] }
+utoipa-swagger-ui = { version = "9", features = ["axum"] }
 
 # Validation
 validator = { version = "0.19", features = ["derive"] }
