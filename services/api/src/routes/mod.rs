@@ -1,12 +1,12 @@
-pub mod health;
 pub mod animals;
-pub mod tenants;
 pub mod grants;
+pub mod health;
+pub mod tenants;
 
-use axum::{Router, routing::get};
+use crate::state::AppState;
+use axum::{routing::get, Router};
 use tower_http::cors::{Any, CorsLayer};
 use tower_http::trace::TraceLayer;
-use crate::state::AppState;
 
 pub fn create_router(state: AppState) -> Router {
     let cors = CorsLayer::new()
@@ -17,7 +17,10 @@ pub fn create_router(state: AppState) -> Router {
     Router::new()
         .route("/health", get(health::health))
         .route("/api/v1/health", get(health::health))
-        .route("/api/v1/tenants", get(tenants::list_tenants).post(tenants::create_tenant))
+        .route(
+            "/api/v1/tenants",
+            get(tenants::list_tenants).post(tenants::create_tenant),
+        )
         .route("/api/v1/tenants/:tenant_id", get(tenants::get_tenant))
         .route(
             "/api/v1/tenants/:tenant_id/animals",

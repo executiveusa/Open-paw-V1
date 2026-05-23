@@ -1,5 +1,5 @@
-use std::sync::Arc;
 use open_paw_storage::Database;
+use std::sync::Arc;
 
 #[derive(Clone)]
 pub struct AppState {

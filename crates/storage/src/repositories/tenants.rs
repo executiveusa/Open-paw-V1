@@ -1,7 +1,7 @@
+use crate::error::StorageError;
+use chrono::Utc;
 use sqlx::SqlitePool;
 use uuid::Uuid;
-use chrono::Utc;
-use crate::error::StorageError;
 
 #[derive(sqlx::FromRow, serde::Serialize, serde::Deserialize, Debug, Clone)]
 pub struct TenantRow {

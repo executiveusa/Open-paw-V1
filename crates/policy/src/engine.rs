@@ -1,6 +1,6 @@
-use open_paw_auth::{Action, can_perform};
 use crate::decisions::{PolicyContext, PolicyDecision};
 use open_paw_auth::Role;
+use open_paw_auth::{can_perform, Action};
 
 pub struct PolicyEngine;
 
@@ -8,7 +8,10 @@ impl PolicyEngine {
     pub fn decide(ctx: &PolicyContext) -> PolicyDecision {
         // Grant submission requires approval even for admins
         if ctx.action == Action::SubmitGrant {
-            let can_draft = ctx.actor_roles.iter().any(|r| can_perform(r, &Action::DraftGrant));
+            let can_draft = ctx
+                .actor_roles
+                .iter()
+                .any(|r| can_perform(r, &Action::DraftGrant));
             if can_draft {
                 return PolicyDecision::RequireApproval {
                     approver_roles: vec![Role::Admin, Role::Owner, Role::Finance],
@@ -35,8 +38,8 @@ impl PolicyEngine {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use open_paw_auth::{Action, Role};
     use crate::decisions::PolicyContext;
+    use open_paw_auth::{Action, Role};
     use uuid::Uuid;
 
     fn ctx(roles: Vec<Role>, action: Action) -> PolicyContext {

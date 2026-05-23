@@ -1,7 +1,10 @@
-use axum::{extract::{Path, State}, Json};
+use crate::{error::ApiError, state::AppState};
+use axum::{
+    extract::{Path, State},
+    Json,
+};
 use serde::Deserialize;
 use serde_json::{json, Value};
-use crate::{error::ApiError, state::AppState};
 
 #[derive(Deserialize)]
 pub struct CreateFunderBody {

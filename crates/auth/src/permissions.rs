@@ -86,7 +86,10 @@ mod tests {
 
     #[test]
     fn public_intake_cannot_publish_profile() {
-        assert!(!can_perform(&Role::PublicIntake, &Action::PublishPublicProfile));
+        assert!(!can_perform(
+            &Role::PublicIntake,
+            &Action::PublishPublicProfile
+        ));
     }
 
     #[test]

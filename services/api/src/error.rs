@@ -1,4 +1,8 @@
-use axum::{http::StatusCode, response::{IntoResponse, Response}, Json};
+use axum::{
+    http::StatusCode,
+    response::{IntoResponse, Response},
+    Json,
+};
 use serde_json::json;
 
 #[derive(Debug)]
@@ -6,6 +10,7 @@ pub enum ApiError {
     NotFound(String),
     BadRequest(String),
     Internal(String),
+    #[allow(dead_code)] // used by upcoming auth middleware
     Forbidden(String),
 }
 
@@ -16,7 +21,11 @@ impl IntoResponse for ApiError {
             ApiError::BadRequest(msg) => (StatusCode::BAD_REQUEST, "BAD_REQUEST", msg),
             ApiError::Internal(msg) => {
                 tracing::error!("Internal error: {}", msg);
-                (StatusCode::INTERNAL_SERVER_ERROR, "INTERNAL_ERROR", "Internal server error".to_string())
+                (
+                    StatusCode::INTERNAL_SERVER_ERROR,
+                    "INTERNAL_ERROR",
+                    "Internal server error".to_string(),
+                )
             }
             ApiError::Forbidden(msg) => (StatusCode::FORBIDDEN, "FORBIDDEN", msg),
         };
@@ -28,7 +37,9 @@ impl IntoResponse for ApiError {
 impl From<open_paw_storage::StorageError> for ApiError {
     fn from(e: open_paw_storage::StorageError) -> Self {
         match e {
-            open_paw_storage::StorageError::NotFound => ApiError::NotFound("Resource not found".to_string()),
+            open_paw_storage::StorageError::NotFound => {
+                ApiError::NotFound("Resource not found".to_string())
+            }
             _ => ApiError::Internal(e.to_string()),
         }
     }

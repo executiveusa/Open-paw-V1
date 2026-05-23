@@ -1,8 +1,11 @@
-use axum::{extract::{Path, State}, Json};
+use crate::{error::ApiError, state::AppState};
+use axum::{
+    extract::{Path, State},
+    Json,
+};
+use open_paw_storage::repositories::tenants::TenantRepository;
 use serde::Deserialize;
 use serde_json::{json, Value};
-use crate::{error::ApiError, state::AppState};
-use open_paw_storage::repositories::tenants::TenantRepository;
 
 #[derive(Deserialize)]
 pub struct CreateTenantBody {

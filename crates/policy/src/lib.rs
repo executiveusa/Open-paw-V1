@@ -1,5 +1,5 @@
-pub mod engine;
 pub mod decisions;
+pub mod engine;
 
+pub use decisions::{PolicyContext, PolicyDecision};
 pub use engine::PolicyEngine;
-pub use decisions::{PolicyDecision, PolicyContext};

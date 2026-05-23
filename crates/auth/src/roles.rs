@@ -36,6 +36,9 @@ impl Role {
     }
 
     pub fn is_privileged(&self) -> bool {
-        matches!(self, Role::Owner | Role::Admin | Role::Vet | Role::MedicalStaff)
+        matches!(
+            self,
+            Role::Owner | Role::Admin | Role::Vet | Role::MedicalStaff
+        )
     }
 }

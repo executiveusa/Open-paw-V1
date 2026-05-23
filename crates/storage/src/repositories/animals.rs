@@ -1,7 +1,7 @@
+use crate::error::StorageError;
+use chrono::Utc;
 use sqlx::SqlitePool;
 use uuid::Uuid;
-use chrono::Utc;
-use crate::error::StorageError;
 
 #[derive(sqlx::FromRow, serde::Serialize, serde::Deserialize, Debug, Clone)]
 pub struct AnimalRow {
@@ -44,7 +44,11 @@ impl<'a> AnimalRepository<'a> {
         Ok(rows)
     }
 
-    pub async fn find_by_id(&self, tenant_id: &str, id: &str) -> Result<Option<AnimalRow>, StorageError> {
+    pub async fn find_by_id(
+        &self,
+        tenant_id: &str,
+        id: &str,
+    ) -> Result<Option<AnimalRow>, StorageError> {
         let row = sqlx::query_as::<_, AnimalRow>(
             "SELECT id, tenant_id, name, species, breed, sex, age_estimate_months, weight_kg, color, microchip_id, intake_date, intake_source, status, location, public_bio, is_restricted, created_at, updated_at FROM animals WHERE tenant_id = ? AND id = ?"
         )
@@ -55,7 +59,12 @@ impl<'a> AnimalRepository<'a> {
         Ok(row)
     }
 
-    pub async fn create(&self, tenant_id: &str, name: &str, species: &str) -> Result<AnimalRow, StorageError> {
+    pub async fn create(
+        &self,
+        tenant_id: &str,
+        name: &str,
+        species: &str,
+    ) -> Result<AnimalRow, StorageError> {
         let id = Uuid::new_v4().to_string();
         let now = Utc::now().to_rfc3339();
         let intake_date = Utc::now().to_rfc3339();
@@ -93,10 +102,15 @@ impl<'a> AnimalRepository<'a> {
         })
     }
 
-    pub async fn update_status(&self, tenant_id: &str, id: &str, status: &str) -> Result<(), StorageError> {
+    pub async fn update_status(
+        &self,
+        tenant_id: &str,
+        id: &str,
+        status: &str,
+    ) -> Result<(), StorageError> {
         let now = Utc::now().to_rfc3339();
         let result = sqlx::query(
-            "UPDATE animals SET status = ?, updated_at = ? WHERE tenant_id = ? AND id = ?"
+            "UPDATE animals SET status = ?, updated_at = ? WHERE tenant_id = ? AND id = ?",
         )
         .bind(status)
         .bind(&now)

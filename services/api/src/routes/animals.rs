@@ -1,8 +1,11 @@
-use axum::{extract::{Path, State}, Json};
+use crate::{error::ApiError, state::AppState};
+use axum::{
+    extract::{Path, State},
+    Json,
+};
+use open_paw_storage::repositories::animals::AnimalRepository;
 use serde::Deserialize;
 use serde_json::{json, Value};
-use crate::{error::ApiError, state::AppState};
-use open_paw_storage::repositories::animals::AnimalRepository;
 
 #[derive(Deserialize)]
 pub struct CreateAnimalBody {
@@ -58,14 +61,29 @@ pub async fn update_animal_status(
     Json(body): Json<UpdateAnimalStatusBody>,
 ) -> Result<Json<Value>, ApiError> {
     let valid_statuses = [
-        "intake", "quarantine", "medical_hold", "behavior_hold", "foster_needed",
-        "in_foster", "adoptable", "adoption_pending", "adopted", "transferred",
-        "returned", "lost", "found", "deceased",
+        "intake",
+        "quarantine",
+        "medical_hold",
+        "behavior_hold",
+        "foster_needed",
+        "in_foster",
+        "adoptable",
+        "adoption_pending",
+        "adopted",
+        "transferred",
+        "returned",
+        "lost",
+        "found",
+        "deceased",
     ];
     if !valid_statuses.contains(&body.status.as_str()) {
-        return Err(ApiError::BadRequest(format!("Invalid status: {}", body.status)));
+        return Err(ApiError::BadRequest(format!(
+            "Invalid status: {}",
+            body.status
+        )));
     }
     let repo = AnimalRepository::new(&state.db.pool);
-    repo.update_status(&tenant_id, &animal_id, &body.status).await?;
+    repo.update_status(&tenant_id, &animal_id, &body.status)
+        .await?;
     Ok(Json(json!({ "data": { "status": body.status } })))
 }

@@ -1,7 +1,7 @@
+use crate::roles::Role;
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
-use crate::roles::Role;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Session {

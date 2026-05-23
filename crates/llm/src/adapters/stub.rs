@@ -1,5 +1,5 @@
-use async_trait::async_trait;
 use crate::provider::{ChatRole, CompletionRequest, CompletionResponse, LlmError, LlmProvider};
+use async_trait::async_trait;
 
 pub struct StubProvider {
     pub name: String,
@@ -22,7 +22,10 @@ impl LlmProvider for StubProvider {
             .unwrap_or("(empty)");
 
         Ok(CompletionResponse {
-            content: format!("[DRAFT — AI OUTPUT REQUIRES HUMAN REVIEW]\n\nResponding to: {}", user_content),
+            content: format!(
+                "[DRAFT — AI OUTPUT REQUIRES HUMAN REVIEW]\n\nResponding to: {}",
+                user_content
+            ),
             model: format!("stub/{}", self.name),
             input_tokens: Some(100),
             output_tokens: Some(50),

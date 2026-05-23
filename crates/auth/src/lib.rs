@@ -1,7 +1,7 @@
-pub mod roles;
 pub mod permissions;
+pub mod roles;
 pub mod session;
 
+pub use permissions::{can_perform, Action, Permission};
 pub use roles::Role;
-pub use permissions::{Action, Permission, can_perform};
 pub use session::Session;

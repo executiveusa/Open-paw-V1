@@ -3,7 +3,6 @@
 mod tests {
     #[test]
     fn api_compiles() {
-        // If this test compiles and links, the basic API structure is valid
-        assert!(true);
+        // Compilation itself is the assertion: if this builds, the API structure is valid
     }
 }

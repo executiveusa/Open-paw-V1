@@ -1,5 +1,7 @@
-pub mod provider;
 pub mod adapters;
+pub mod provider;
 
-pub use provider::{LlmProvider, ChatMessage, ChatRole, CompletionRequest, CompletionResponse, LlmError};
 pub use adapters::stub::StubProvider;
+pub use provider::{
+    ChatMessage, ChatRole, CompletionRequest, CompletionResponse, LlmError, LlmProvider,
+};

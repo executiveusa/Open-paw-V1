@@ -1,6 +1,6 @@
+use crate::capabilities::PluginCapability;
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
-use crate::capabilities::PluginCapability;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct PluginManifest {
