@@ -13,7 +13,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "astro": "^5.8.0",
+    "astro": "^6.1.10",
     "@astrojs/mdx": "^4.2.1",
     "@astrojs/sitemap": "^3.3.0",
     "@astrojs/tailwind": "^5.1.4",
