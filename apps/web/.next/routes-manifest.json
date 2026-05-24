@@ -1,0 +1,190 @@
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/app/animals/[id]",
+      "regex": "^/app/animals/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/app/animals/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/blog/[slug]",
+      "regex": "^/blog/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/blog/(?<nxtPslug>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/app",
+      "regex": "^/app(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/app(?:/)?$"
+    },
+    {
+      "page": "/app/adoptions",
+      "regex": "^/app/adoptions(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/app/adoptions(?:/)?$"
+    },
+    {
+      "page": "/app/animals",
+      "regex": "^/app/animals(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/app/animals(?:/)?$"
+    },
+    {
+      "page": "/app/animals/new",
+      "regex": "^/app/animals/new(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/app/animals/new(?:/)?$"
+    },
+    {
+      "page": "/app/fosters",
+      "regex": "^/app/fosters(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/app/fosters(?:/)?$"
+    },
+    {
+      "page": "/app/funding",
+      "regex": "^/app/funding(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/app/funding(?:/)?$"
+    },
+    {
+      "page": "/app/intake",
+      "regex": "^/app/intake(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/app/intake(?:/)?$"
+    },
+    {
+      "page": "/app/lost-found",
+      "regex": "^/app/lost\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/app/lost\\-found(?:/)?$"
+    },
+    {
+      "page": "/app/medical",
+      "regex": "^/app/medical(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/app/medical(?:/)?$"
+    },
+    {
+      "page": "/app/people",
+      "regex": "^/app/people(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/app/people(?:/)?$"
+    },
+    {
+      "page": "/app/reports",
+      "regex": "^/app/reports(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/app/reports(?:/)?$"
+    },
+    {
+      "page": "/app/resources",
+      "regex": "^/app/resources(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/app/resources(?:/)?$"
+    },
+    {
+      "page": "/app/settings",
+      "regex": "^/app/settings(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/app/settings(?:/)?$"
+    },
+    {
+      "page": "/app/tasks",
+      "regex": "^/app/tasks(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/app/tasks(?:/)?$"
+    },
+    {
+      "page": "/blog",
+      "regex": "^/blog(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog(?:/)?$"
+    },
+    {
+      "page": "/docs",
+      "regex": "^/docs(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/docs(?:/)?$"
+    },
+    {
+      "page": "/download",
+      "regex": "^/download(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/download(?:/)?$"
+    },
+    {
+      "page": "/funding",
+      "regex": "^/funding(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/funding(?:/)?$"
+    },
+    {
+      "page": "/login",
+      "regex": "^/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/login(?:/)?$"
+    },
+    {
+      "page": "/security",
+      "regex": "^/security(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/security(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments"
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

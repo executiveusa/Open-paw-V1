@@ -1,0 +1,7 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/app/layout,_N_T_/app/animals/layout,_N_T_/app/animals/[id]/layout,_N_T_/app/animals/[id]/page,_N_T_/app/animals/10000000-0000-0000-0000-000000000004"
+  }
+}
