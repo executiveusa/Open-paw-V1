@@ -13,8 +13,8 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "astro": "^7.3.4",
-    "@astrojs/mdx": "^8.0.2",
+    "astro": "^7.3.8",
+    "@astrojs/mdx": "^8.0.3",
     "@astrojs/sitemap": "^3.7.4",
     "tailwindcss": "^4.3.3",
     "@astrojs/check": "^0.9.10",
@@ -22,7 +22,7 @@
     "@tailwindcss/vite": "^4.3.3"
   },
   "devDependencies": {
-    "prettier": "^3.9.9",
-    "prettier-plugin-astro": "^1.0.0"
+    "prettier": "^3.9.10",
+    "prettier-plugin-astro": "^1.1.1"
   }
 }
